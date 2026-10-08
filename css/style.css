@@ -587,6 +587,20 @@ header .menu-icon span {
     grid-area: bloqCo;
   }
 }
+@keyframes sacudirCompra {
+  0%, 10%, 20%, 30%, 40%, 100% {
+    transform: translateX(0);
+  }
+  2.5% {
+    transform: translateX(-2px);
+  }
+  5% {
+    transform: translateX(2px);
+  }
+  7.5% {
+    transform: translateX(-2px);
+  }
+}
 /* ============================= */
 /* GIRAS - MOBILE */
 /* ============================= */
@@ -612,6 +626,7 @@ iframe {
 
 .girasCompra button {
   width: auto;
+  animation: sacudirCompra 2.5s ease-in-out infinite;
 }
 
 .listaGiras article {

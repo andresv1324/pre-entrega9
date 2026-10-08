@@ -2,6 +2,16 @@
 @use "../utilities/extend" as *;
 @use "../utilities/mixin" as *;
 
+@keyframes sacudirCompra {
+    0%, 10%, 20%, 30%, 40%, 100% {
+        transform: translateX(0);
+    }
+
+    2.5% { transform: translateX(-2px); }
+    5%   { transform: translateX(2px); }
+    7.5% { transform: translateX(-2px); }
+}
+
 //3 VISTAS TERMINADAS
 
 /* ============================= */
@@ -36,6 +46,7 @@ iframe {
     button {
         @extend %botonEstilo;
         width: auto;
+        animation: sacudirCompra 2.5s ease-in-out infinite;
     }
 }
 
