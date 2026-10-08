@@ -1,0 +1,68 @@
+@use "../utilities/variables" as *;
+@use "../utilities/extend" as *;
+@use "../utilities/mixin" as *;
+
+body {
+    overflow-x: hidden;
+    font-family: $fuenteTexto;
+    font-weight: 400;
+    background-color: $colorHeaderFondo;
+    color: $colorTextoPrincipal;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* Contenidos */
+section {
+    background-color: $colorSectionFondo;
+    padding: 20px;
+}
+
+article {
+    background-color: $colorArticleFondo;
+    padding: 20px;
+}
+
+/* Títulos */
+h1,h2,h3 {
+    font-family: $fuenteTitulo;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+p {
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+figcaption {
+    font-weight: 200;
+}
+
+/* Enlaces */
+a {
+    text-decoration: none;
+    color: $colorHeaderTitulo;
+}
+
+/* Elementos */
+iframe {
+    width: 400px;
+    height: 200px;
+}

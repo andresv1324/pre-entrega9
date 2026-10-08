@@ -1,0 +1,199 @@
+@use "../utilities/variables" as *;
+@use "../utilities/extend" as *;
+@use "../utilities/mixin" as *;
+
+//3 VISTAS TERMINADAS
+
+/* ============================= */
+/* GALERIA - MOBILE */
+/* ============================= */
+.mainGaleria {
+    background-color: $colorSectionFondo;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 8px;
+}
+
+.mainGaleria .galeriaCarrusel {
+    background-color: $colorArticleFondo;
+}
+
+
+.bloqueGaleria,.bloqueVideo,.bloqueConciertos,.bloqueFotografia {
+    @extend %bloqueGaleria;
+}
+
+.carousel-item{
+    &:hover{
+        transform: scale(1.2);
+    }
+}
+
+.galeriaCarrusel {
+    width: 70%;
+    max-width: 500px;
+    margin: 0 auto;
+
+        padding: 1rem;
+
+    background-color: rgb(11, 16, 32);
+    border: 1px solid rgb(0, 217, 255);
+    border-radius: 8px;
+
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.2);
+}
+
+.galeriaIframe {
+    display: block;
+}
+
+.carousel-caption {
+    display: none;
+}
+
+.carruselFoto3,.carruselFoto4,.bloqueConciertos {
+    display: none;
+}
+
+
+/* ============================= */
+/* GALERIA - TABLET */
+/* ============================= */ 
+@include tablet {
+
+    .bloqueFotografia {
+        width: 100%;
+
+        @include grid(
+            repeat(2, 1fr),
+            1fr 5fr,
+            "tituloF tituloF"
+            "carr1F carr2F"
+        );
+    }
+
+    .bloqueVideo {
+        @include grid(
+            repeat(2, minmax(0, 1fr)),
+            1fr 5fr,
+            "tituloV tituloV"
+            "carr1V carr2V"
+        );
+    }
+
+    .bloqueFotografia h2 {
+        justify-self: center;
+        grid-area: tituloF;
+    }
+
+    .carruselFoto1 {
+        grid-area: carr1F;
+    }
+
+    .carruselFoto2 {
+        grid-area: carr2F;
+    }
+
+    .bloqueVideo h2 {
+        justify-self: center;
+        grid-area: tituloV;
+    }
+
+    .carruselVideo1 {
+        grid-area: carr1V;
+    }
+
+    .carruselVideo2 {
+        grid-area: carr2V;
+    }
+
+    .carousel-caption {
+        display: none;
+    }
+}
+
+
+
+/* ============================= */
+/* GALERIA - ESCRITORIO */
+/* ============================= */
+
+@include escritorio {
+
+    .carruselFoto3,
+    .carruselFoto4,
+    .bloqueConciertos {
+        display: block;
+    }
+
+    .mainGaleria {
+        @include grid(
+            repeat(4, 1fr),
+            1fr 6fr 6fr,
+            "tituloG . . ."
+            "bloqFo bloqFo bloqFo bloqFo"
+            "bloqVi bloqVi bloqCo bloqCo"
+        );
+    }
+
+    .bloqueConciertos {
+        @include grid(
+            repeat(1, minmax(0, 1fr)),
+            1fr 3fr 3fr,
+            "tituloG2"
+            "concierto"
+            "concierto"
+        );
+    }
+
+    .bloqueConciertos h2 {
+        justify-self: center;
+        grid-area: tituloG2;
+    }
+
+    .bloqueConciertos section {
+        grid-area: concierto;
+    }
+
+    .bloqueFotografia {
+        width: 100%;
+
+        @include grid(
+            repeat(3, 1fr),
+            1fr 5fr,
+            "tituloF tituloF tituloF"
+            "carr1F carr2F carr3F"
+        );
+    }
+
+    .bloqueVideo {
+        @include grid(
+            repeat(1, minmax(0, 1fr)),
+            1fr 3fr 3fr,
+            "tituloV"
+            "carr1V"
+            "carr2V"
+        );
+    }
+
+    .carruselFoto3 {
+        grid-area: carr3F;
+    }
+
+    .tituloGaleria {
+        grid-area: tituloG;
+    }
+
+    .bloqueFotografia {
+        grid-area: bloqFo;
+    }
+
+    .bloqueVideo {
+        grid-area: bloqVi;
+    }
+
+    .bloqueConciertos {
+        grid-area: bloqCo;
+    }
+}

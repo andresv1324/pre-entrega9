@@ -1,0 +1,82 @@
+@use "../utilities/variables" as *;
+@use "../utilities/extend" as *;
+@use "../utilities/mixin" as *;
+
+
+// Header
+header {
+
+    // Navbar
+    nav {
+
+        // Logo / nombre
+        a {
+            font-size: 25px;
+            color: $colorHeaderTitulo;
+        }
+
+        // Lista del menú
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+    }
+
+    // Navbar de Bootstrap
+    .navbar-collapse {
+        justify-content: flex-end;
+    }
+
+    // Logo
+    .navbar-brand {
+        font-size: 25px;
+        color: $colorHeaderTitulo;
+
+        &:hover {
+            color: $colorHeaderMenuHover;
+        }
+    }
+
+    // Links
+    .nav-link {
+        color: $colorHeaderMenu;
+        font-size: 25px;
+        padding: 8px;
+        transition: all 0.5s;
+
+        &:hover {
+            color: $colorHeaderMenuHover;
+            text-decoration: underline;
+            transform: $hoverTransform;
+        }
+    }
+
+    // Link activo
+    .navbar .nav-link.active {
+        color: $colorHeaderMenu;
+        background-color: $colorHeaderMenuActivo;
+        border: 1px solid $colorHeaderMenuBorde;
+        border-radius: 50px;
+        padding: 8px 15px;
+    }
+
+    // Botón hamburguesa
+    .navbar-toggler {
+        border-color: $colorHeaderMenuBorde;
+    }
+
+    // Icono hamburguesa
+    .menu-icon {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        span {
+            width: 20px;
+            height: 2px;
+            background-color: $colorHeaderMenu;
+            display: block;
+        }
+    }
+}

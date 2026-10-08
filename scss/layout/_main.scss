@@ -1,0 +1,207 @@
+@use "../utilities/variables" as *;
+@use "../utilities/extend" as *;
+@use "../utilities/mixin" as *;
+
+//3 VISTAS TERMINADAS
+
+/* ============================= */
+/* MAIN - MOBILE */
+/* ============================= */
+.mainIndex {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+/* ============================= */
+/* TRAYECTORIA */
+/* ============================= */
+
+.trayectoriaIndex {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.bloqueTrayectoriaIndex {
+    display: block;
+}
+
+.bloqueHabilidadesIndex {
+    display: block;
+}
+
+.indexImgAlan {
+    display: none;
+}
+
+
+/* ============================= */
+/* LISTA */
+/* ============================= */
+
+.indexLista {
+    list-style: none;
+}
+
+
+/* ============================= */
+/* BIOGRAFÍA */
+/* ============================= */
+
+.indexBioInicio {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "indexT"
+        "indexB1"
+        "indexB2";
+    gap: 1rem;
+}
+
+
+/* ============================= */
+/* ÁREAS DEL GRID */
+/* ============================= */
+
+.indexTitulo {
+    grid-area: indexT;
+}
+
+.indexBioTexto1 {
+    grid-area: indexB1;
+}
+
+.indexBioTexto2 {
+    grid-area: indexB2;
+}
+
+
+/* ============================= */
+/* TABLET - 758px */
+/* ============================= */
+@include tablet {
+
+    /* ========================= */
+    /* TRAYECTORIA */
+    /* ========================= */
+
+    .trayectoriaIndex {
+        grid-area: trayectoria;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .bloqueTrayectoriaIndex {
+        display: none;
+    }
+
+    .bloqueHabilidadesIndex {
+        display: block;
+    }
+
+    .indexImgAlan {
+        display: block;
+    }
+
+    /* ========================= */
+    /* BIOGRAFÍA */
+    /* ========================= */
+
+    .indexBioInicio {
+        grid-area: bio;
+
+        @include grid(
+            1fr 1fr,
+            auto,
+            "indexT indexT"
+            "indexB1 indexB2"
+        );
+
+        gap: 1rem;
+    }
+}
+    .indexImgAlan{
+        display: none;
+    }
+
+
+/* ============================= */
+/* ESCRITORIO - 1024px */
+/* ============================= */
+@include escritorio {
+
+    /* ========================= */
+    /* MAIN INDEX */
+    /* ========================= */
+
+    .mainIndex {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* ========================= */
+    /* TRAYECTORIA */
+    /* ========================= */
+
+    .trayectoriaIndex {
+        display: grid;
+
+        @include grid(
+            1fr 1fr,
+            auto 1fr,
+            "bloTraInd bloTraInd"
+            "bloqHabInd bloImgInd"
+        );
+    }
+
+    .bloqueTrayectoriaIndex {
+        grid-area: bloTraInd;
+        display: block;
+    }
+
+    .bloqueHabilidadesIndex {
+        grid-area: bloqHabInd;
+        display: block;
+    }
+
+    .indexImgAlan {
+        grid-area: bloImgInd;
+        display: block;
+    }
+
+    /* ========================= */
+    /* BIOGRAFÍA */
+    /* ========================= */
+
+    .indexBioInicio {
+        @include grid(
+            repeat(2, 1fr),
+            1fr 1fr 2fr,
+            "indexT indexT"
+            "indexB1 indexB1"
+            "indexB2 indexB2"
+        );
+
+        gap: 1rem;
+    }
+
+    /* ========================= */
+    /* LISTA */
+    /* ========================= */
+
+    .indexLista {
+        list-style: none;
+    }
+
+    /* ========================= */
+    /* TRAYECTORIA */
+    /* ========================= */
+
+    .trayectoriaIndex {
+        gap: 0;
+    }
+}

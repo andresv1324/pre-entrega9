@@ -1,0 +1,29 @@
+@use "../utilities/variables" as *;
+@use "../utilities/extend" as *;
+@use "../utilities/mixin" as *;
+
+
+footer {
+    padding: 1rem;
+    background-color: $colorFooterFondo;
+
+    @include flex(row, space-between, center, null);
+
+    section {
+        background-color: $colorFooterFondo;
+
+        nav {
+            @include flex(row, space-evenly, center, 4rem);
+        }
+    }
+
+    .redes {
+        @include flex(row, null, null, null);
+
+        nav {
+            a {
+                width: 2rem;
+            }
+        }
+    }
+}

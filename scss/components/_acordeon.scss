@@ -1,0 +1,55 @@
+@use "../utilities/variables" as *;
+@use "../utilities/extend" as *;
+@use "../utilities/mixin" as *;
+
+
+/* ============================= */
+/* ACORDEÓN */
+/* ============================= */
+
+#accordionTrayectoria {
+
+    //* Elemento del acordeón */
+    .accordion-item {
+        background-color: $colorAcordeon;
+        border: 1px solid $colorAcordeonBorde;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+
+
+    //* Botón */
+    .accordion-button {
+        background-color: $colorAcordeon;
+        color: $colorAcordeonTexto;
+        border: none;
+        box-shadow: none;
+        transition: all 2s ease;
+    }
+
+
+    //* Botón cuando está abierto */
+    .accordion-button:not(.collapsed) {
+        background-color: $colorAcordeon;
+        color: $colorAcordeonTexto;
+        box-shadow: none;
+    }
+
+
+    //* Cuerpo */
+    .accordion-body {
+        background-color: $colorAcordeon;
+        color: $colorTextoPrincipal;
+        border-top: 1px solid $colorAcordeonBorde;
+    }
+
+
+    //* Focus */
+    .accordion-button:focus {
+        background-color: $colorAcordeonFocus;
+        color: $colorHeaderMenuHover;
+        border: 1px solid $colorAcordeonBorde;
+        box-shadow: 0 0 0 3px $colorAcordeonFocusSombra;
+    }
+}
