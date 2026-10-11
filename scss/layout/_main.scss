@@ -1,6 +1,6 @@
 @use "../utilities/variables" as *;
 @use "../utilities/extend" as *;
-@use "../utilities/mixin" as *;
+@use "../utilities/mixins" as *;
 
 //3 VISTAS TERMINADAS
 
@@ -122,10 +122,11 @@
 
         gap: 1rem;
     }
-}
-    .indexImgAlan{
+        .indexImgAlan{
         display: none;
     }
+}
+
 
 
 /* ============================= */

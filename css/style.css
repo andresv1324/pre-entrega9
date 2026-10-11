@@ -239,11 +239,10 @@ header .menu-icon span {
     grid-template-areas: "indexT indexT" "indexB1 indexB2";
     gap: 1rem;
   }
+  .indexImgAlan {
+    display: none;
+  }
 }
-.indexImgAlan {
-  display: none;
-}
-
 /* ============================= */
 /* ESCRITORIO - 1024px */
 /* ============================= */
